@@ -27,7 +27,7 @@ jobs:
           context: .
           file: .devcontainer/Dockerfile
           push: true
-          tags: yourdockerhubuser/ratelimiter-flask:latest
+          tags: shymkoserhii/ratelimiter-flask:latest
           build-args: |
             APP_TARGET=flask
 
@@ -37,6 +37,6 @@ jobs:
           context: .
           file: .devcontainer/Dockerfile
           push: true
-          tags: yourdockerhubuser/ratelimiter-fastapi:latest
+          tags: shymkoserhii/ratelimiter-fastapi:latest
           build-args: |
             APP_TARGET=fastapi
