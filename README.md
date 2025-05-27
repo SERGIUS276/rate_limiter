@@ -43,6 +43,7 @@ The core algorithmic approach implemented in this project is inspired by the fol
 ```bash
 git clone https://github.com/SERGIUS276/rate_limiter.git
 cd rate_limiter
+poetry env use "path to python.exe"
 poetry install
 ```
 
