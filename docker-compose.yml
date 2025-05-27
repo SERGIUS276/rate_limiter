@@ -9,7 +9,7 @@ services:
   flask_app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: .devcontainer/Dockerfile
       args:
         APP_TARGET: flask
     ports:
@@ -20,7 +20,7 @@ services:
   fastapi_app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: .devcontainer/Dockerfile
       args:
         APP_TARGET: fastapi
     ports:

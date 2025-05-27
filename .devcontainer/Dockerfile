@@ -8,14 +8,13 @@ RUN pip install --no-cache-dir poetry==$POETRY_VERSION
 
 WORKDIR /app
 
-COPY pyproject.toml poetry.lock* /app/
+COPY ../pyproject.toml ../poetry.lock* /app/
 RUN poetry install --no-interaction --no-ansi
 
-COPY . /app
+COPY .. /app
 
 EXPOSE 5000
 
-# Build arg to determine entrypoint
 ARG APP_TARGET=flask
 
 CMD if [ "$APP_TARGET" = "fastapi" ]; then \

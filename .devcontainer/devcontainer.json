@@ -1,0 +1,20 @@
+{
+  "name": "RateLimiter DevContainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "..",
+    "args": {
+      "APP_TARGET": "flask" // or "fastapi"
+    }
+  },
+  "forwardPorts": [5000],
+  "postCreateCommand": "poetry install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  }
+}
