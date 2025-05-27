@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  flask_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_TARGET: flask
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+
+  fastapi_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_TARGET: fastapi
+    ports:
+      - "5001:5000"
+    depends_on:
+      - redis
